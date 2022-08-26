@@ -2,37 +2,998 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.homeContainer {
+  position: relative;
+  width: 100%;
+  /* cursor: url("http://www.javascriptkit.com/dhtmltutors/cursor-hand.gif"), url(foo.cur), auto; */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.toggleDrawer {
+  position: fixed;
+  top: 1%;
+  right: 5%;
+  border: none;
+  font-size: 3vw;
   color: white;
+  background-color: #02598b;
+  border-radius: 48%;
+  padding: 1%;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  cursor: pointer;
 }
 
-.App-link {
-  color: #61dafb;
+.toggleDrawer2
+{
+  position: fixed;
+  top: 1%;
+  right: 5%;
+  border: none;
+  font-size: 3vw;
+  color: white;
+  background-color: #02598b;
+  border-radius: 48%;
+  padding: 1%;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.drawerHeader {
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+}
+
+.drawerHeading {
+  font-size: 2vw;
+  padding: 0% 2%;
+  font-weight: bold;
+  font-family: "Aboreto", cursive;
+}
+
+.drawerSubheadingDiv {
+  display: flex;
+  justify-content: space-between;
+  padding: 3% 2% 10% 2%;
+}
+
+.drawerSubheadingText {
+  font-size: 1.5vw;
+  /* padding: 0% 2%; */
+  font-weight: bold;
+  font-family: "Open Sans", sans-serif;
+  width: 70%;
+  margin: 0%;
+}
+
+.drawerSubheadingBtn {
+  width: 30%;
+  margin: 0%;
+}
+
+.drawerSubheadingBtn button {
+  font-size: 1.5vw;
+  border: none;
+  width: 60%;
+  padding: 1% 0%;
+  border-radius: 8px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bolder;
+  cursor: pointer;
+}
+
+.drawerContentDiv {
+  width: 90%;
+  margin: auto;
+  margin-top: -5%;
+  background-color: white;
+  border-radius: 8px;
+  padding: 3% 2%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.settingDiv {
+  display: flex;
+  justify-content: space-between;
+  padding: 2% 2%;
+}
+
+.settingName {
+  margin: 0%;
+  font-size: 2vw;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+}
+
+.settingIcon {
+  margin: 0%;
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 10%;
+  height: 3vw;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0%;
+  bottom: 0%;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 2.2vw;
+  width: 40%;
+  left: 5%;
+  bottom: 15%;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.rangeInputDiv {
+  width: 50%;
+}
+
+.rangeInputDiv input {
+  width: 100%;
+  cursor: pointer;
+}
+
+.fontSizeDiv {
+  background-color: rgb(51, 51, 51, 0.6);
+  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+  color: white;
+  border-radius: 8px;
+  margin: 5% 0%;
+}
+
+
+.cursorFlex
+{
+  display: flex;
+  justify-content: space-between;
+  padding: 10% 0%;
+}
+
+.cursorDiv
+{
+  width: 35%;
+  margin: auto;
+  text-align: center;
+  padding: 3%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  transition: transform .2s;
+  cursor: pointer;
+  font-family: "Open Sans", sans-serif;
+}
+
+.cursorDiv:hover
+{
+  transform: scale(1.1);
+}
+
+.cursorDiv i
+{
+  font-size: 3vw;
+}
+
+.cursorDiv p
+{
+  font-size: 1.8vw;
+  font-weight: bolder;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* NAVBAR ONE CONTAINER  */
+
+.navbarOneContainer {
+  display: flex;
+  justify-content: space-between;
+  background-color: #333;
+  color: white;
+  padding: 1% 0%;
+}
+
+.navbarOneContainer div {
+  width: 50%;
+}
+
+.navbarOneContainer p {
+  margin: 0%;
+  font-size: 1.5vw;
+  font-family: "Aboreto", cursive;
+  font-weight: bold;
+}
+
+.donateBtn {
+  border: none;
+  color: white;
+  background-color: #333;
+  outline: 1px solid white;
+  border-radius: 4px;
+  font-size: 1.5vw;
+  margin: 0% 4%;
+}
+
+/* SECOND NAVBAR CSS  */
+
+.navbarTwoContainer {
+  display: flex;
+  background-color: #e2ddc6;
+  font-family: "Open Sans", sans-serif;
+  padding: 1.5% 0%;
+  position: relative;
+}
+
+.logoDiv {
+  width: 20%;
+}
+
+.logoDiv img {
+  width: 100%;
+}
+
+.myBooksDiv {
+  width: 15%;
+}
+
+.myBooksDiv p {
+  font-size: 1.8vw;
+  opacity: 80%;
+}
+
+.browseDiv {
+  width: 15%;
+}
+
+.browseDiv p {
+  font-size: 1.8vw;
+  opacity: 80%;
+}
+
+.searchOuterDiv {
+  width: 40%;
+  margin: auto;
+}
+
+.searchInnerDiv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#searchInput {
+  width: 90%;
+  border: none;
+  height: 4vw;
+  font-size: 1.5vw;
+  margin: 3% 0%;
+  border-radius: 5px 0px 0px 5px;
+}
+
+#searchInput2 {
+  width: 90%;
+  border: none;
+  height: 4vw;
+  font-size: 1.5vw;
+  margin: 3% 0%;
+  border-radius: 5px 0px 0px 5px;
+}
+
+#searchInput3 {
+  width: 90%;
+  border: none;
+  height: 4vw;
+  font-size: 1.5vw;
+  margin: 3% 0%;
+  border-radius: 5px 0px 0px 5px;
+}
+
+.searchBtn {
+  width: 10%;
+  border: none;
+  height: 4.2vw;
+  font-size: 1.8vw;
+  border-radius: 0px 5px 5px 0px;
+  background-color: white;
+  color: rgb(68, 68, 68);
+  cursor: pointer;
+}
+
+.navLink {
+  text-decoration: none;
+}
+
+/* WELCOME CONTAINER CSS  */
+
+.welcomeContainer {
+  /* position: relative; */
+  width: 95%;
+  margin: auto;
+  font-family: "Open Sans", sans-serif;
+  border-radius: 8px;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  color: black;
+}
+
+.welcomeHeading {
+  font-size: 2.2vw;
+  text-align: start;
+  color: #02598b;
+  font-weight: bold;
+  padding: 2% 2%;
+  margin: 0%;
+}
+
+.welcomeFlex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.featureCardDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 30%;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  text-align: start;
+  border: 1px solid rgb(146, 146, 146);
+  border-radius: 4px;
+}
+
+.featureImageDiv {
+  width: 30%;
+  padding: 2%;
+}
+
+.featureImageDiv img {
+  width: 100%;
+}
+
+.featureDetailsDiv {
+  width: 70%;
+  display: table;
+}
+
+.featureContent {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.featureDetailsDiv h5 {
+  font-size: 1.5vw;
+  margin: 0%;
+}
+
+.featureDetailsDiv p {
+  font-size: 1.2vw;
+  margin: 0%;
+}
+
+/* CATALOGUE CONTAINER CSS  */
+
+.catalogueContainer {
+  width: 95%;
+  margin: auto;
+  font-family: "Open Sans", sans-serif;
+  border-radius: 8px;
+}
+
+.catalogueHeading {
+  font-size: 2vw;
+  text-align: start;
+  color: #02598b;
+  padding: 3% 2%;
+  margin: 0%;
+}
+
+.mainCatalogueContainer {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #f3edd7;
+}
+
+.bookContainer {
+  width: 25%;
+  padding: 2% 0%;
+  cursor: pointer;
+  position: relative;
+}
+
+.popoverContent {
+  display: none;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+  margin-top: -5%;
+  background-color: white;
+  border-radius: 8px;
+  padding: 2%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  
+  animation: fadeIn 0.7s;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.popoverMessage
+{
+  font-size: 2.5vw;
+  font-weight: bolder;
+}
+
+.popoverMessage2
+{
+  font-size: 1.5vw;
+  font-weight: bolder;
+}
+
+.bookContainer:hover > .popoverContent {
+  display: block;
+}
+
+.bookContainer img {
+  width: 90%;
+  margin: auto;
+  height: 30vw;
+  border-radius: 6px;
+}
+
+.bookTitle {
+  font-size: 1.5vw;
+  font-weight: bold;
+}
+
+.bookAuthor {
+  font-size: 1.3vw;
+}
+
+/* PROGRESS BAR CSS  */
+
+.custom-loader {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 16px solid #508bbf;
+  border-right-color: #8dadc2;
+  position: relative;
+  animation: s4 1s infinite linear;
+  margin: auto;
+  margin-top: 10%;
+}
+.custom-loader:before,
+.custom-loader:after {
+  content: "";
+  position: absolute;
+  inset: -16px;
+  border-radius: 50%;
+  border: inherit;
+  animation: inherit;
+  animation-duration: 2s;
+}
+.custom-loader:after {
+  animation-duration: 4s;
+}
+
+@keyframes s4 {
+  100% {
+    transform: rotate(1turn);
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* SEARCH RESULTS CSS  */
+
+.searchHeading {
+  font-size: 2vw;
+  text-align: start;
+  color: #02598b;
+  margin: 3% 2%;
+  font-family: "Open Sans", sans-serif;
+}
+
+.mainResultsContainer {
+  width: 90%;
+  margin: auto;
+}
+
+.resultBookDiv {
+  display: flex;
+  margin: 3% 0%;
+  padding: 2%;
+  background-color: #f3edd7;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  border-radius: 6px;
+}
+
+.resultBookImageDiv {
+  width: 15%;
+  cursor: pointer;
+}
+
+.resultBookImageDiv img {
+  width: 100%;
+  /* height: 22vw; */
+}
+
+.resultBookDetailsDiv {
+  text-align: start;
+  font-family: "Open Sans", sans-serif;
+  width: 60%;
+  display: table;
+  margin: 0% 2%;
+}
+
+.actualDetailsDiv {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.bookNameDetail {
+  font-size: 2.5vw;
+  font-weight: bolder;
+}
+
+.bookAuthorDetail {
+  font-size: 2vw;
+}
+
+.bookTimeDetail {
+  font-size: 1.5vw;
+  font-weight: bold;
+}
+
+.bookSubDeails {
+  font-size: 1.5vw;
+  font-weight: bold;
+}
+
+.resultBookBtnDiv {
+  width: 25%;
+  display: table;
+}
+
+.actualBtnDiv {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.resultBookBtnDiv button {
+  width: 80%;
+  margin: auto;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding: 2% 0%;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bolder;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.bookBtn1 {
+  font-size: 1.8vw;
+  background-color: #6c6c6c;
+  color: white;
+  border: none;
+}
+
+.bookBtn2 {
+  font-size: 1.8vw;
+  background-color: #229122;
+  color: white;
+  border: none;
+}
+
+/* BOOK PAGE CSS  */
+
+.mainBookPageContainer {
+  display: flex;
+}
+
+.openedBookImageDiv {
+  width: 16%;
+  margin: 2% 2%;
+  padding: 2%;
+  border: 1px solid rgb(206, 205, 205);
+  border-radius: 6px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.openedBookImageDiv img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.openedBookBtn {
+  width: 100%;
+  background-color: #229122;
+  color: white;
+  border: none;
+  font-size: 2vw;
+  padding: 3% 0%;
+  border-radius: 4px;
+  margin: 5% 0%;
+  cursor: pointer;
+}
+
+.openedBookDetailsDiv {
+  text-align: start;
+  width: 80%;
+  padding: 2%;
+}
+
+.pageBookTitle {
+  font-size: 3vw;
+  font-weight: bolder;
+  font-family: "Open Sans", sans-serif;
+}
+
+.pageBookAuthor {
+  font-size: 1.6vw;
+  opacity: 75%;
+}
+
+.overviewMainHeading {
+  margin: 10% 0% 0% 0%;
+  font-size: 2vw;
+  font-family: "Open Sans", sans-serif;
+  color: #02598b;
+}
+
+.overviewDiv {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.overviewHeading {
+  font-size: 1.6vw;
+  font-weight: bold;
+}
+
+.overviewSubheading {
+  font-size: 1.4vw;
+}
+
+.languagesDiv {
+  margin: 10% 0%;
+  width: 50%;
+}
+
+.languagesMainHeading {
+  font-size: 2vw;
+  font-family: "Open Sans", sans-serif;
+  color: #02598b;
+  margin: 0%;
+  font-weight: bold;
+}
+
+.allLangDiv {
+  display: flex;
+  justify-content: space-between;
+}
+
+.langSubHeading {
+  font-size: 1.4vw;
+  background-color: rgb(140, 140, 140, 0.7);
+  padding: 1%;
+}
+
+/* MEDIA QUERY  */
+
+@media screen and (max-width: 576px) {
+  .welcomeFlex {
+    display: block;
+    flex-wrap: wrap;
+  }
+
+  .featureCardDiv {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    text-align: start;
+    border: 1px solid rgb(146, 146, 146);
+    border-radius: 4px;
+    margin-top: 2%;
+    margin-bottom: 2%;
+  }
+
+  .featureDetailsDiv h5 {
+    font-size: 3.5vw;
+    margin: 0%;
+  }
+
+  .featureDetailsDiv p {
+    font-size: 3vw;
+    margin: 0%;
+  }
+
+  .mainCatalogueContainer {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #f3edd7;
+  }
+
+  .bookContainer {
+    width: 50%;
+    padding: 2% 0%;
+    cursor: pointer;
+  }
+
+  .bookContainer img {
+    width: 90%;
+    margin: auto;
+    height: 50vw;
+    border-radius: 6px;
+  }
+
+  .bookTitle {
+    font-size: 4vw;
+    font-weight: bold;
+  }
+
+  .bookAuthor {
+    font-size: 3vw;
+    margin: 0%;
+  }
+
+  .openedBookImageDiv {
+    width: 36%;
+    margin: 2% 2%;
+    padding: 2%;
+    border: 1px solid rgb(206, 205, 205);
+    border-radius: 6px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+      rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+  }
+
+  .openedBookImageDiv img {
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  .openedBookDetailsDiv {
+    text-align: start;
+    width: 60%;
+    padding: 2%;
+  }
+
+  .pageBookTitle {
+    font-size: 5vw;
+    font-weight: bolder;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .pageBookAuthor {
+    font-size: 3.5vw;
+    opacity: 75%;
+  }
+
+  .overviewMainHeading {
+    margin: 10% 0% 0% 0%;
+    font-size: 4vw;
+    font-family: "Open Sans", sans-serif;
+    color: #02598b;
+  }
+
+  .overviewDiv {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+  }
+
+  .overviewHeading {
+    font-size: 2.5vw;
+    font-weight: bold;
+  }
+
+  .overviewSubheading {
+    font-size: 2.3vw;
+  }
+
+  .languagesDiv {
+    margin: 10% 0%;
+    width: 60%;
+  }
+
+  .languagesMainHeading {
+    font-size: 3vw;
+    font-family: "Open Sans", sans-serif;
+    color: #02598b;
+    margin: 0%;
+    font-weight: bold;
+  }
+
+  .allLangDiv {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .langSubHeading {
+    font-size: 2.5vw;
+    background-color: rgb(140, 140, 140, 0.7);
+    padding: 1%;
+  }
+
+  .bookNameDetail {
+    font-size: 2.7vw;
+    font-weight: bolder;
+  }
+
+  .bookAuthorDetail {
+    font-size: 2.2vw;
+  }
+
+  .bookTimeDetail {
+    font-size: 2vw;
+  }
+
+  .bookSubDeails {
+    font-size: 2vw;
+  }
+
+  .catalogueHeading {
+    font-size: 5vw;
+    text-align: start;
+    color: #02598b;
+    /* margin: 10% 10%; */
+    padding: 10% 10%;
+    /* margin: 0%; */
+  }
+
+  .welcomeHeading {
+    font-size: 5vw;
+    text-align: start;
+    color: #02598b;
+    font-weight: bold;
+    margin: 5% 10%;
+  }
+
+  .myBooksDiv {
+    width: 15%;
+  }
+
+  .myBooksDiv p {
+    font-size: 3vw;
+    opacity: 80%;
+  }
+
+  .browseDiv {
+    width: 15%;
+  }
+
+  .browseDiv p {
+    font-size: 3vw;
+    opacity: 80%;
+  }
+
+  .searchOuterDiv {
+    width: 50%;
+    margin: auto;
+  }
+
+  .searchInnerDiv {
+    width: 95%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  #searchInput {
+    width: 90%;
+    border: none;
+    height: 4vw;
+    font-size: 3vw;
+    margin: 3% 0%;
+    border-radius: 5px 0px 0px 5px;
+  }
+
+  #searchInput2 {
+    width: 90%;
+    border: none;
+    height: 4vw;
+    font-size: 3vw;
+    margin: 3% 0%;
+    border-radius: 5px 0px 0px 5px;
+  }
+
+  #searchInput3 {
+    width: 90%;
+    border: none;
+    height: 4vw;
+    font-size: 3vw;
+    margin: 3% 0%;
+    border-radius: 5px 0px 0px 5px;
+  }
+
+  .searchBtn {
+    width: 10%;
+    border: none;
+    height: 4.2vw;
+    font-size: 1.8vw;
+    border-radius: 0px 5px 5px 0px;
+    background-color: white;
+    color: rgb(68, 68, 68);
+    cursor: pointer;
+  }
+
+  .searchHeading {
+    font-size: 4vw;
+    text-align: start;
+    color: #02598b;
+    margin: 3% 5%;
+    font-family: "Open Sans", sans-serif;
   }
 }
